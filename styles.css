@@ -1,0 +1,474 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h2 {
+    color: #444;
+}
+
+/* Profile Picture Styling */
+.profile-picture {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-img {
+    width: 200px;  /* Adjust size as needed */
+    height: auto;
+    border-radius: 50%;  /* Makes the image circular */
+    border: 3px solid #ddd;  /* Light border around the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Subtle shadow effect */
+}
+
+@media (max-width: 768px) {
+    .profile-img {
+        width: 150px;  /* Smaller size on mobile */
+    }
+}
+
+/* Gallery Section */
+#gallery {
+    padding: 2rem;
+    background-color: #f8f8f8;
+}
+
+#gallery h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Form Styles */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .submit-btn {
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #555;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Additional styling for responsiveness */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+/* Navbar and Menu Styles */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Makes the navbar horizontal */
+    justify-content: center; /* Centers the menu items */
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu > li > a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.menu > li > a:hover {
+    background-color: #444;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Positions the dropdown directly below the parent item */
+    left: 0;
+    background-color: #444;
+    min-width: 200px;
+    z-index: 1;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content li {
+    list-style-type: none;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 0.8rem 1.2rem;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column; /* Stacks items vertically on smaller screens */
+    }
+
+    .menu > li > a {
+        text-align: center;
+    }
+
+    .dropdown-content {
+        position: static; /* Dropdown becomes inline when stacked */
+        box-shadow: none;
+    }
+}
+
+/* Estimate Form Styles */
+#estimate-form {
+    padding: 2rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#estimate-form h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#estimate-form p {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.estimate-form label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #333;
+}
+
+.estimate-form input, .estimate-form select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.estimate-form input:focus, .estimate-form select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.estimate-form .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.estimate-form .submit-btn:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #estimate-form {
+        padding: 1rem;
+    }
+
+    .estimate-form input, .estimate-form select {
+        font-size: 0.9rem;
+    }
+
+    .estimate-form .submit-btn {
+        font-size: 1rem;
+    }
+}
+
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #444;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+nav a {
+    margin: 0 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: white;
+}
+
+nav a:hover {
+    color: #e6e6e6;
+    border-bottom: 2px solid #fff;
+}
+
+/* Sections */
+section {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 1rem 0;
+}
+
+ul li strong {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Contact Section */
+#contact p {
+    font-size: 1.1rem;
+}
+
+#contact a {
+    color: #333;
+    font-weight: bold;
+}
+
+#contact a:hover {
+    color: #007bff;
+}
+
+/* General Select Styling */
+form label {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+    color: #333;
+}
+
+select {
+    appearance: none; /* Removes default dropdown styling */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    width: 100%; /* Adjust width as needed */
+    max-width: 300px;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+select:hover {
+    background-color: #f1f1f1;
+}
+
+/* Add a dropdown arrow */
+select::after {
+    content: '▼';
+    font-size: 1rem;
+    color: #333;
+    position: absolute;
+    right: 1rem;
+    pointer-events: none;
+}
+
+/* Style for the options within the dropdown */
+option {
+    padding: 0.8rem;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    select {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    nav a {
+        margin: 0.5rem 0;
+        font-size: 1.2rem;
+    }
+
+    section {
+        margin: 2rem 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}

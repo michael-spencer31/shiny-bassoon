@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caitlin Patterson - Professional Model and Actress">
+    <title>Caitlin Patterson - Model & Actress</title>
+    <script src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link rel="stylesheet" href="styles.css"> <!-- Assuming external CSS file -->
+</head>
+
+<body>
+    <header>
+        <h1>Caitlin Patterson</h1>
+        <p>Model & Actress - Halifax, Nova Scotia</p>
+    </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="modeling.html">Work Experience</a>
+        <a href="rates.html">Rates</a>
+         <a href="gallery.html">Photo Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+      <section id="rates">
+        <h2>Rates</h2>
+        <p>General rates start at <strong>$100/hour CAD</strong>. Rates may vary based on:</p>
+        <ul>
+            <li>Travel distance from Halifax, Nova Scotia</li>
+            <li>Event duration</li>
+            <li>Number of garments</li>
+            <li>Specific attire (e.g., lingerie, swimwear, or sheer tops)</li>
+        </ul>
+        <p>
+            For a detailed rate breakdown, please <a href="#contact">contact me</a> or visit the General Costs page on this website.
+        </p>
+    </section>
+
+    <section id="estimate-form">
+    <h2>Estimate Form</h2>
+    <p>Please note this is just an estimate. These results are not legally binding.</p>
+    <form action="your-server-side-script.php" method="POST" class="estimate-form">
+        <!-- Question 1 -->
+        <label for="location">Is your event located within a 2-hour drive from downtown Halifax, Nova Scotia?</label>
+        <select id="location" name="location" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <!-- Question 2 -->
+        <label for="duration">How long is your event? (In hours)</label>
+        <input type="number" id="duration" name="duration" min="1" placeholder="Enter duration in hours" required>
+
+        <!-- Question 3 -->
+        <label for="hair-makeup">Do you provide professional hair and makeup services?</label>
+        <select id="hair-makeup" name="hair_makeup" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <!-- Question 4 -->
+        <label for="attire">Do you need lingerie, intimates, or hosiery modeled?</label>
+        <select id="attire" name="attire" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="lingerie">Lingerie</option>
+            <option value="intimates">Intimates</option>
+            <option value="hosiery">Hosiery</option>
+            <option value="multiple">Multiple</option>
+            <option value="none">None</option>
+        </select>
+
+        <p id="cost">Estimated Cost = $100</p>
+    </form>
+</section>
+
+
+</body>
+
+</body>
