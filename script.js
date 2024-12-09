@@ -4,6 +4,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const hairMakeup = document.getElementById('hair-makeup');
     const attire = document.getElementById('attire');
     const costDisplay = document.getElementById('cost');
+    const eventType = document.getElementById('event-type');
+    const modelingQuestion = document.getElementById('modeling-question');
+    const danceQuestion = document.getElementById('dance-question');
+    const submitButton = document.getElementById('submitButton');
+
+    // Show appropriate Question 4 based on Question 3 answer
+    eventType.addEventListener('change', () => {
+        modelingQuestion.style.display = 'none';
+        danceQuestion.style.display = 'none';
+        submitButton.style.display = 'none';
+
+        if (eventType.value === 'modeling') {
+            modelingQuestion.style.display = 'block';
+        } else if (eventType.value === 'dance') {
+            danceQuestion.style.display = 'block';
+        }
+    });
+
+    // Show Submit Button when a specific Question 4 is answered
+    [document.getElementById('modeling-details'), document.getElementById('dance-details')].forEach((field) => {
+        field.addEventListener('change', () => {
+            if (field.value) {
+                submitButton.style.display = 'block';
+            }
+        });
+    });
 
     const baseRate = 100; // Base hourly rate
     let totalRate = baseRate;
@@ -45,3 +71,4 @@ document.addEventListener('DOMContentLoaded', () => {
         element.addEventListener('input', calculateCost);
     });
 });
+

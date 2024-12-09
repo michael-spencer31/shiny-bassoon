@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
-    color: #333;
+    color: #777;
 }
 
 a {
@@ -288,8 +288,8 @@ h2 {
 
 /* Header */
 header {
-    background-color: #333;
-    color: white;
+    background-color: #6fa8dc;
+    color: black;
     padding: 2rem;
     text-align: center;
 }
@@ -306,8 +306,8 @@ header p {
 
 /* Navigation Bar */
 nav {
-    background-color: #444;
-    color: white;
+    background-color: #6fa8dc;
+    color: black;
     display: flex;
     justify-content: center;
     padding: 1rem 0;
@@ -317,7 +317,7 @@ nav a {
     margin: 0 2rem;
     font-weight: bold;
     font-size: 1.1rem;
-    color: white;
+    color: black;
 }
 
 nav a:hover {
@@ -472,3 +472,92 @@ footer p {
         font-size: 0.9rem;
     }
 }
+
+/* General Form Styling */
+#dynamic-form {
+    padding: 2rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+#dynamic-form h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+#dynamic-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels and Inputs */
+#dynamic-form label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: bold;
+}
+
+#dynamic-form input, 
+#dynamic-form select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#dynamic-form input:focus, 
+#dynamic-form select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button */
+#dynamic-form .submit-btn {
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: none; /* Hidden by default */
+}
+
+#dynamic-form .submit-btn:hover {
+    background-color: #555;
+}
+
+/* Dynamic Question Sections */
+#modeling-question, 
+#dance-question {
+    display: none; /* Hidden by default */
+}
+
+#modeling-question label, 
+#dance-question label {
+    margin-top: 1rem;
+}
+
+/* Cost Display */
+#cost {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
