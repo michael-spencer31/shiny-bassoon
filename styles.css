@@ -130,7 +130,7 @@ h2 {
 }
 /* Navbar and Menu Styles */
 .navbar {
-    background-color: #333;
+    background-color: blueviolet;
     overflow: hidden;
 }
 
@@ -359,7 +359,7 @@ nav a {
     margin: 0 2rem;
     font-weight: bold;
     font-size: 1.1rem;
-    color: black;
+    color: white;
 }
 
 nav a:hover {
@@ -603,3 +603,81 @@ footer p {
 }
 
 
+/* Header Styling */
+.site-header {
+    background-color: blueviolet;
+    color: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    text-align: left;
+}
+
+.site-header h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: #fff;
+}
+
+.site-header p {
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+}
+
+/* Navbar Styling */
+.navbar {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar {
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
