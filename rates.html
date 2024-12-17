@@ -1,88 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Violet Patterson - Professional Model and Dancer">
-    <title>Violet Patterson - Model & Dancer</title>
-    <script src="script.js"></script>
-    <link rel="icon" type="image/x-icon" href="images/logo.png">
-    <link rel="stylesheet" href="styles.css"> <!-- Assuming external CSS file -->
-</head>
-
-<body>
-    <header class="site-header">
-        <div class="logo-container">
-            <h1>Violet Patterson</h1>
-            <p>Model & Dancer - Halifax, Nova Scotia</p>
-        </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event Inquiry Form</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
         <nav class="navbar">
-            <ul classs="menu">
-                <a href="home.html">Home</a>
-                <a href="modeling.html">Work Experience - Modeling</a>
-                <a href="dancing.html">Work Experience - Dance</a>
-                <a href="rates.html">Rates</a>
-                <a href="gallery.html">Photo Gallery</a>
-                <a href="resume.html">Résumé</a>
-                <a href="contact.html">Contact</a>
+            <div class="logo">
+                <a href="#home">Violet Patterson</a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="modeling.html">Modeling</a></li>
+                <li><a href="dancing.html">Dance</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="rates.html">Rates</a></li>
+                <li><a href="resume.html">Résumé</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-    </header>
+        <section>
+            <h1>Cost Estimate Form</h1>
+            <p>The form below can be used to get an <b><i>estimate</i></b> of the cost to book me for your event. This should give you a good estimate, but please contact me to finalize your booking. My rates start at <b>$100 CAD.</b></p>
+            <section class="form-container">
+                <form id="event-form">
+                    <!-- Question 1 -->
+                    <div class="form-group">
+                        <label>Is your event located within a 2 hour drive of Halifax, Nova Scotia?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="location" value="yes" required> Yes</label>
+                            <label><input type="radio" name="location" value="no"> No</label>
+                        </div>
+                    </div>
 
-      <section id="rates">
-        <h2>Rates</h2>
-        <p>General rates start at <strong>$100/hour CAD</strong>. Rates may vary based on:</p>
-        <ul>
-            <li>Travel distance from Halifax, Nova Scotia</li>
-            <li>Event duration</li>
-            <li>Number of garments</li>
-            <li>Specific attire (e.g., lingerie, swimwear, or sheer tops)</li>
-        </ul>
-        <p>
-            For a detailed rate breakdown, please <a href="#contact">contact me</a> or visit the General Costs page on this website.
-        </p>
-    </section>
+                    <!-- Question 2 -->
+                    <div class="form-group">
+                        <label>What type of event?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="event-type" value="modeling" required> Modeling</label>
+                            <label><input type="radio" name="event-type" value="dance"> Dance</label>
+                        </div>
+                    </div>
 
-    <section id="estimate-form">
-    <h2>Estimate Form</h2>
-    <p>Please note this is just an estimate. These results are not legally binding.</p>
-    <form action="your-server-side-script.php" method="POST" class="estimate-form">
-        <!-- Question 1 -->
-        <label for="location">Is your event located within a 2-hour drive from downtown Halifax, Nova Scotia?</label>
-        <select id="location" name="location" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select>
+                    <!-- Question 2a -->
+                    <div class="form-group conditional modeling">
+                        <label>Do you need lingerie, intimates, or hosiery modeled?</label>
+                        <select name="modeling-type" id="modeling-type">
+                            <option value="">-- Select an option --</option>
+                            <option value="lingerie">Lingerie</option>
+                            <option value="intimates">Intimates</option>
+                            <option value="hosiery">Hosiery</option>
+                            <option value="multiple">Multiple</option>
+                            <option value="none">None of the Above</option>
+                        </select>
+                    </div>
 
-        <!-- Question 2 -->
-        <label for="duration">How long is your event? (In hours)</label>
-        <input type="number" id="duration" name="duration" min="1" placeholder="Enter duration in hours" required>
+                    <!-- Question 2b -->
+                    <div class="form-group conditional dance">
+                        <label>What type of dance?</label>
+                        <select name="dance-type" id="dance-type">
+                            <option value="">-- Select an option --</option>
+                            <option value="ballet">Ballet</option>
+                            <option value="jazz">Jazz</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
 
-        <!-- Question 3 -->
-        <label for="hair-makeup">Do you provide professional hair and makeup services?</label>
-        <select id="hair-makeup" name="hair_makeup" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select>
+                    <!-- Question 3 -->
+                    <div class="form-group">
+                        <label>How long is your event, in hours?</label>
+                        <input type="number" name="event-duration" min="1" placeholder="Enter event duration" required>
+                    </div>
 
-        <!-- Question 4 -->
-        <label for="attire">Do you need lingerie, intimates, or hosiery modeled?</label>
-        <select id="attire" name="attire" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="lingerie">Lingerie</option>
-            <option value="intimates">Intimates</option>
-            <option value="hosiery">Hosiery</option>
-            <option value="multiple">Multiple</option>
-            <option value="none">None</option>
-        </select>
+                    <!-- Question 4 -->
+                    <div class="form-group">
+                        <label>Do you provide professional hair and makeup services?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="hair-makeup" value="yes" required> Yes</label>
+                            <label><input type="radio" name="hair-makeup" value="no"> No</label>
+                        </div>
+                    </div>
 
-        <p id="cost">Estimated Cost = $100</p>
-    </form>
-</section>
-
-<footer>
-        <p>&copy; 2024 Violet Patterson. All Rights Reserved.</p>
-    </footer>
-</body>
+                    <!-- Estimated Cost Label -->
+                    <div class="form-group">
+                        <label id="estimated-cost">Estimated Cost: $100 CAD</label>
+                        <p id="cost-disclaimer">* This estimate is for informational purposes only and is not legally binding.</p>
+                    </div>
+                </form>
+            </section>
+        </section>
+        <!-- Footer -->
+        <footer class="footer-tab">
+            <p>&copy; 2024 Violet Patterson. All Rights Reserved.</p>
+        </footer>
+    <script src="script.js"></script>
+    </body>
+</html>

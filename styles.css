@@ -1,683 +1,489 @@
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #777;
+/* Reset some default styles */
+body, ul, li, a {
+    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+/* Common height for header and footer */
+:root {
+  --header-footer-height: 60px; /* Set a consistent height */
 }
 
-h2 {
-    color: #444;
+/* Navbar styles */
+.navbar {
+  height: var(--header-footer-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: blueviolet;
+  color: white;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #f3a712;
+}
+
+.nav-list {
+  position: absolute;
+  top: 60px; /* Adjusted to align with navbar height */
+  right: 20px;
+  background: blueviolet;
+  border-radius: 5px;
+  overflow: hidden;
+  max-height: 0; /* Initially hidden */
+  transition: max-height 0.3s ease; /* Smooth expand/collapse */
+}
+
+.nav-list li {
+  display: block;
+  padding: 10px 20px;
+}
+
+.nav-list a {
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: #f3a712;
+}
+
+
+
+/* Hamburger menu */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.menu-toggle .bar {
+  background: white;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* Show menu on larger screens */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-list {
+    position: static;
+    max-height: none;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+}
+
+/* Show menu when active */
+.nav-list.active {
+  max-height: 300px; /* Adjust this based on the number of links */
+}
+
+
+/* Footer styles */
+.footer-tab {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-footer-height); /* Same height as header */
+  background-color: blueviolet;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.footer-tab a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-tab a:hover {
+  color: lightgray;
+}
+
+/* Section styles */
+section {
+  padding: 40px 20px; /* Add space inside the section */
+  margin: 20px auto; /* Centre the section and add space around it */
+  background-color: #f9f9f9; /* Light background colour */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 1200px; /* Limit the width for better readability */
+  font-family: Arial, sans-serif; /* Set a clean font */
+  color: #333; /* Dark text colour for good contrast */
+  line-height: 1.6; /* Improve text readability */
+}
+
+/* Section heading styles */
+section h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: black; /* Accent colour */
+  text-align: center; /* Centre align headings */
+}
+
+/* Section paragraph styles */
+section p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-align: justify; /* Justify text for a clean look */
+}
+
+/* Section responsive adjustments */
+@media (max-width: 768px) {
+  section {
+    padding: 30px 15px; /* Adjust padding for smaller screens */
+  }
+
+  section h2 {
+    font-size: 24px; /* Reduce heading size on smaller screens */
+  }
+
+  section p {
+    font-size: 14px; /* Adjust paragraph size for readability */
+  }
 }
 
 /* Profile Picture Styling */
+
 .profile-picture {
     text-align: center;
     margin-bottom: 2rem;
 }
 
 .profile-img {
-    width: 200px;  /* Adjust size as needed */
+    width: 200px;
     height: auto;
-    border-radius: 50%;  /* Makes the image circular */
-    border: 3px solid #ddd;  /* Light border around the image */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Subtle shadow effect */
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 768px) {
-    .profile-img {
-        width: 150px;  /* Smaller size on mobile */
-    }
+/* General gallery container styles */
+.photo-gallery {
+    display: grid;                    /* Use a grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 15px;                        /* Spacing between images */
+    padding: 20px;                    /* Padding around the gallery */
+    background-color: #f9f9f9;        /* Light background color */
 }
 
-/* Gallery Section */
-#gallery {
-    padding: 2rem;
-    background-color: #f8f8f8;
+/* Individual photo styles */
+.photo-gallery img {
+    width: 100%;                      /* Ensure images fill their grid cell */
+    height: auto;                     /* Maintain aspect ratio */
+    border-radius: 10px;              /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
-#gallery h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+/* Hover effect for photos */
+.photo-gallery img:hover {
+    transform: scale(1.05);           /* Slight zoom-in effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
 }
 
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
+/* Optional: Caption styles (if used) */
+.photo-caption {
+    text-align: center;               /* Center the caption text */
+    font-size: 16px;                  /* Adjust font size */
+    color: #333;                      /* Dark grey text */
+    margin-top: 10px;                 /* Spacing above the caption */
 }
 
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.gallery-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.gallery-image:hover {
-    transform: scale(1.05);
-}
-
-/* Contact Form Styles */
-.contact-form {
+/* form-container */
+.form-container {
     max-width: 600px;
-    margin: 0 auto;
-    padding: 1.5rem;
-    background-color: #fff;
-    border-radius: 8px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form label {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    display: block;
-}
+/* Form Header */
 
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-.contact-form .submit-btn {
-    padding: 1rem 2rem;
-    background-color: #333;
-    color: white;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form .submit-btn:hover {
-    background-color: #555;
-}
-
-.contact-form input:focus, .contact-form textarea:focus {
-    outline: none;
-    border-color: #007bff;
-}
-
-/* Additional styling for responsiveness */
-@media (max-width: 768px) {
-    .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-}
-/* Navbar and Menu Styles */
-.navbar {
-    background-color: blueviolet;
-    overflow: hidden;
-}
-
-.menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex; /* Makes the navbar horizontal */
-    justify-content: center; /* Centers the menu items */
-}
-
-.menu > li {
-    position: relative;
-}
-
-.menu > li > a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 1rem 1.5rem;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-}
-
-.menu > li > a:hover {
-    background-color: #444;
-}
-
-/* Dropdown Content */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%; /* Positions the dropdown directly below the parent item */
-    left: 0;
-    background-color: #444;
-    min-width: 200px;
-    z-index: 1;
-    border-radius: 4px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown-content li {
-    list-style-type: none;
-}
-
-.dropdown-content a {
-    color: white;
-    padding: 0.8rem 1.2rem;
-    text-decoration: none;
-    display: block;
-    font-size: 1rem;
-}
-
-.dropdown-content a:hover {
-    background-color: #555;
-}
-
-/* Show Dropdown on Hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .menu {
-        flex-direction: column; /* Stacks items vertically on smaller screens */
-    }
-
-    .menu > li > a {
-        text-align: center;
-    }
-
-    .dropdown-content {
-        position: static; /* Dropdown becomes inline when stacked */
-        box-shadow: none;
-    }
-}
-
-/* Estimate Form Styles */
-#estimate-form {
-    padding: 2rem;
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    max-width: 600px;
-    margin: 2rem auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#estimate-form h2 {
+.form-container h1 {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #4a4a4a;
 }
 
-#estimate-form p {
-    text-align: center;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    color: #555;
+/* Form Group */
+
+.form-group {
+    margin-bottom: 20px;
 }
 
-.estimate-form label {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+.form-group label {
     display: block;
-    color: #333;
+    font-size: 16px;
+    margin-bottom: 8px;
 }
 
-.estimate-form input, .estimate-form select {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.estimate-form input:focus, .estimate-form select:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.estimate-form .submit-btn {
-    width: 100%;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.estimate-form .submit-btn:hover {
-    background-color: #555;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #estimate-form {
-        padding: 1rem;
-    }
-
-    .estimate-form input, .estimate-form select {
-        font-size: 0.9rem;
-    }
-
-    .estimate-form .submit-btn {
-        font-size: 1rem;
-    }
-}
-
-
-/* Header */
-header {
-    background-color: #6fa8dc;
-    color: black;
-    padding: 2rem;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-header p {
-    font-size: 1.2rem;
-    margin-top: 0;
-}
-
-/* Resume Download Section */
-#resume-download {
-    text-align: center;
-    padding: 2rem;
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    max-width: 600px;
-    margin: 2rem auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
-}
-
-#resume-download h2 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-#resume-download p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-}
-
-.download-btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    background-color: #333;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.download-btn:hover {
-    background-color: #555;
-}
-
-/* Navigation Bar */
-nav {
-    background-color: #6fa8dc;
-    color: black;
+/* Radio Group Styling */
+.radio-group {
     display: flex;
-    justify-content: center;
-    padding: 1rem 0;
+    gap: 20px;
 }
 
-nav a {
-    margin: 0 2rem;
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: white;
+.radio-group label {
+    font-size: 14px;
+    cursor: pointer;
 }
 
-nav a:hover {
-    color: #e6e6e6;
-    border-bottom: 2px solid #fff;
-}
-
-/* Sections */
-section {
-    max-width: 1100px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-    font-size: 2rem;
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    margin: 1rem 0;
-}
-
-ul li strong {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Contact Section */
-#contact p {
-    font-size: 1.1rem;
-}
-
-#contact a {
-    color: #333;
-    font-weight: bold;
-}
-
-#contact a:hover {
-    color: #007bff;
-}
-
-/* General Select Styling */
-form label {
-    font-size: 1.1rem;
-    margin-right: 0.5rem;
-    color: #333;
-}
-
+/* Dropdown Menu Styling */
 select {
-    appearance: none; /* Removes default dropdown styling */
-    -moz-appearance: none;
-    -webkit-appearance: none;
-
-    width: 100%; /* Adjust width as needed */
-    max-width: 300px;
-    padding: 0.8rem;
-    font-size: 1rem;
-    color: #333;
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-select:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-select:hover {
-    background-color: #f1f1f1;
-}
-
-/* Add a dropdown arrow */
-select::after {
-    content: '▼';
-    font-size: 1rem;
-    color: #333;
-    position: absolute;
-    right: 1rem;
-    pointer-events: none;
-}
-
-/* Style for the options within the dropdown */
-option {
-    padding: 0.8rem;
-    background-color: #fff;
-    color: #333;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    select {
-        font-size: 0.9rem;
-        max-width: 100%;
-    }
-}
-
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1.5rem;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        padding: 1rem 0;
-    }
-
-    nav a {
-        margin: 0.5rem 0;
-        font-size: 1.2rem;
-    }
-
-    section {
-        margin: 2rem 1rem;
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
-
-    header p {
-        font-size: 1rem;
-    }
-
-    footer p {
-        font-size: 0.9rem;
-    }
-}
-
-/* General Form Styling */
-#dynamic-form {
-    padding: 2rem;
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    max-width: 600px;
-    margin: 2rem auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
-}
-
-#dynamic-form h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 1.5rem;
-}
-
-#dynamic-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Labels and Inputs */
-#dynamic-form label {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #555;
-    font-weight: bold;
-}
-
-#dynamic-form input, 
-#dynamic-form select {
     width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    background-color: #fff;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
-#dynamic-form input:focus, 
-#dynamic-form select:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+/* Input Field Styling */
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
 /* Submit Button */
-#dynamic-form .submit-btn {
-    padding: 1rem;
-    background-color: #333;
-    color: white;
-    font-size: 1.1rem;
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4caf50;
+    color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    display: none; /* Hidden by default */
 }
 
-#dynamic-form .submit-btn:hover {
-    background-color: #555;
+.submit-button:hover {
+    background-color: #45a049;
 }
 
-/* Dynamic Question Sections */
-#modeling-question, 
-#dance-question {
-    display: none; /* Hidden by default */
+/* Conditional Fields (Initially Hidden) */
+.conditional {
+    display: none;
 }
 
-#modeling-question label, 
-#dance-question label {
-    margin-top: 1rem;
+.conditional.active {
+    display: block;
 }
 
-/* Cost Display */
-#cost {
-    font-size: 1.2rem;
+/* Display Conditional Fields Based on Selection */
+.modeling.active,
+.dance.active {
+    display: block;
+}
+
+/* Styling for the Estimated Cost Label */
+#estimated-cost {
+    font-size: 18px;
+    color: #4caf50;
     font-weight: bold;
-    color: #007bff;
     text-align: center;
-    margin-top: 1rem;
+    display: block;
+    margin-top: 20px;
 }
 
+/* Styling for the disclaimer */
+#cost-disclaimer {
+    font-size: 14px;
+    color: #666; /* Subtle grey colour */
+    margin-top: 5px;
+    text-align: center;
+    font-style: italic;
+}
 
-/* Header Styling */
-.site-header {
-    background-color: blueviolet;
-    color: white;
-    padding: 1.5rem 2rem;
+/* Styling for the Resume Download Section */
+.resume-download {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Styling for the Download Button */
+.download-btn {
+    display: inline-block;
+    background-color: blueviolet; /* Button background colour */
+    color: white; /* Button text colour */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px; /* Padding for the button */
+    text-decoration: none; /* Remove underline */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for a 3D effect */
+    transition: all 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Hover Effect */
+.download-btn:hover {
+    background-color: #7f4ebf; /* Slightly lighter purple */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Container for Clothing Sizes */
+.size-info {
+    max-width: 400px;
+    margin: 30px auto; /* Centre-aligns and adds space around */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border: 2px solid blueviolet; /* Purple border to match style */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds subtle shadow */
+    text-align: center;
+}
+
+/* Heading for Size Section */
+.size-info h2 {
+    font-size: 24px;
+    color: blueviolet;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* List of Sizes */
+.size-list {
+    list-style: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 0;
+}
+
+/* Individual Size Items */
+.size-list li {
+    margin: 10px 0; /* Adds spacing between rows */
+    font-size: 18px; /* Text size */
+    color: #333; /* Dark text for readability */
+}
+
+/* Size Labels */
+.size-label {
+    font-weight: bold; /* Makes labels stand out */
+    color: blueviolet; /* Matches style */
+    margin-right: 10px; /* Space between label and value */
+}
+
+/* Size Values */
+.size-value {
+    font-size: 18px; /* Same as labels */
+    color: #555; /* Neutral grey */
+}
+
+/* Work Experience Section */
+.work-experience {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 5px solid blueviolet;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.work-experience h2 {
+    font-size: 28px;
+    color: blueviolet;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Individual Job Container */
+.job {
+    margin-bottom: 25px;
+    padding: 15px 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.job:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Job Title */
+.job-title {
+    font-size: 20px;
+    color: #333;
+    margin: 0 0 5px;
+    font-weight: bold;
+}
+
+/* Company and Dates */
+.company {
+    font-size: 16px;
+    color: #666;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 0 10px;
 }
 
-.logo-container {
-    text-align: left;
+.dates {
+    font-style: italic;
+    color: #888;
 }
 
-.site-header h1 {
-    font-size: 2rem;
-    margin: 0;
-    color: #fff;
+/* Job Description - Custom Bullet Points */
+.job-description {
+    margin-left: 20px;
+    padding-left: 0;
+    line-height: 1.6;
 }
 
-.site-header p {
-    margin: 0;
-    font-size: 1rem;
-    color: white;
-}
-
-/* Navbar Styling */
-.navbar {
-    flex-grow: 1;
-    text-align: right;
-}
-
-.menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: flex-end;
-    gap: 1.5rem;
-}
-
-.menu > li {
+.job-description li {
+    margin-bottom: 8px;
+    font-size: 16px;
     position: relative;
+    padding-left: 20px; /* Space for custom bullet */
+    list-style: none; /* Remove default bullet points */
 }
 
-.menu a {
-    text-decoration: none;
-    font-size: 1rem;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* Visible Custom Bullet */
+.job-description li::before {
+    content: '•'; /* Custom bullet character */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: blueviolet; /* Colour of the bullet point */
+    font-size: 20px; /* Size of the bullet point */
+    line-height: 1.6;
 }
 
-.menu a:hover {
-    background-color: #555;
-    color: #fff;
-}
-
-/* Responsive Navbar */
-@media (max-width: 768px) {
-    .site-header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .navbar {
-        margin-top: 1rem;
-        text-align: center;
-    }
-
-    .menu {
-        flex-direction: column;
-        gap: 1rem;
-    }
-}

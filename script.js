@@ -1,74 +1,79 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const location = document.getElementById('location');
-    const duration = document.getElementById('duration');
-    const hairMakeup = document.getElementById('hair-makeup');
-    const attire = document.getElementById('attire');
-    const costDisplay = document.getElementById('cost');
-    const eventType = document.getElementById('event-type');
-    const modelingQuestion = document.getElementById('modeling-question');
-    const danceQuestion = document.getElementById('dance-question');
-    const submitButton = document.getElementById('submitButton');
+const mobileMenu = document.getElementById('mobile-menu');
+const navList = document.querySelector('.nav-list');
 
-    // Show appropriate Question 4 based on Question 3 answer
-    eventType.addEventListener('change', () => {
-        modelingQuestion.style.display = 'none';
-        danceQuestion.style.display = 'none';
-        submitButton.style.display = 'none';
-
-        if (eventType.value === 'modeling') {
-            modelingQuestion.style.display = 'block';
-        } else if (eventType.value === 'dance') {
-            danceQuestion.style.display = 'block';
-        }
-    });
-
-    // Show Submit Button when a specific Question 4 is answered
-    [document.getElementById('modeling-details'), document.getElementById('dance-details')].forEach((field) => {
-        field.addEventListener('change', () => {
-            if (field.value) {
-                submitButton.style.display = 'block';
-            }
-        });
-    });
-
-    const baseRate = 100; // Base hourly rate
-    let totalRate = baseRate;
-
-    const calculateCost = () => {
-        totalRate = baseRate; // Reset to base rate
-
-        // Adjust for location
-        if (location.value === 'no') {
-            totalRate += 250; // Add $250 for events beyond 2 hours of Halifax
-        }
-
-        // Adjust for professional hair and makeup
-        if (hairMakeup.value === 'no') {
-            totalRate += 150; // Add $150 if hair and makeup are not provided
-        }
-
-        // Adjust for attire
-        if (attire.value === 'multiple') {
-            totalRate += 200; // Add $200 for multiple attire types
-        } else if (attire.value == 'hosiery') {
-            totalRate += 100; // Add $10 for specific attire
-        } else if (attire.value == 'lingerie') {
-            totalRate += 350;
-        } else if (attire.value == 'intimates') {
-            totalRate += 200;
-        }
-
-        // Calculate final cost based on duration
-        const eventDuration = duration.value ? parseInt(duration.value, 10) : 1; // Default to 1 hour
-        const finalCost = totalRate * eventDuration;
-
-        // Update the cost display
-        costDisplay.textContent = `Estimated Cost = $${finalCost.toFixed(2)}`;
-    };
-
-    // Add event listeners to update cost dynamically
-    [location, duration, hairMakeup, attire].forEach((element) => {
-        element.addEventListener('input', calculateCost);
-    });
+mobileMenu.addEventListener('click', () => {
+  navList.classList.toggle('active');
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Get references to elements
+    const eventTypeRadios = document.querySelectorAll('input[name="event-type"]');
+    const modelingSection = document.querySelector('.modeling');
+    const danceSection = document.querySelector('.dance');
+    const estimatedCostLabel = document.getElementById('estimated-cost');
+
+    // Function to update visibility based on the selected event type
+    function updateConditionalFields() {
+        const selectedEventType = document.querySelector('input[name="event-type"]:checked')?.value;
+
+        // Show/Hide sections based on selection
+        if (selectedEventType === "modeling") {
+            modelingSection.classList.add("active");
+            danceSection.classList.remove("active");
+        } else if (selectedEventType === "dance") {
+            danceSection.classList.add("active");
+            modelingSection.classList.remove("active");
+        } else {
+            // Hide both sections if nothing is selected
+            modelingSection.classList.remove("active");
+            danceSection.classList.remove("active");
+        }
+    }
+
+    function updateEstimatedCost() {
+
+        let cost = 100;
+        const eventDuration = document.querySelector('input[name="event-duration"]').value;
+
+        if (eventDuration) {
+            cost += parseInt(eventDuration) * 100;
+        }
+
+        // Check if event is within 2 hours of Halifax
+        const isWithinHalifax = document.querySelector('input[name="location"]:checked')?.value;
+        if (isWithinHalifax === "no") {
+            cost += 200; // Add $200 if the location is not within 2 hours
+        }
+
+        const providesHairMakeup = document.querySelector('input[name="hair-makeup"]:checked')?.value;
+
+        if (providesHairMakeup === 'no') {
+            cost += 250;
+        }
+
+        // Add cost for modeling-specific options
+        const modelingType = document.getElementById('modeling-type').value;
+        if (modelingType === "lingerie") {
+            cost += 400;
+        } else if (modelingType === "intimates") {
+            cost += 300;
+        } else if (modelingType === "hosiery") {
+            cost += 100;
+        }
+        
+        estimatedCostLabel.textContent = `Estimated Cost: $${cost} CAD`;
+    }
+
+    // Add event listeners to form elements
+    document.querySelectorAll('input[name="event-type"]').forEach((radio) => {
+        radio.addEventListener("change", updateConditionalFields);
+    });
+
+    document.querySelectorAll('input, select').forEach((element) => {
+        element.addEventListener("input", updateEstimatedCost);
+    });
+
+    // Initial setup
+    updateConditionalFields();
+    updateEstimatedCost();
+});
