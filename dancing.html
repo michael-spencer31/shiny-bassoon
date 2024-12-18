@@ -1,71 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Violet Patterson - Professional Model and Dancer">
-    <title>Violet Patterson - Model & Actress</title>
-    <script src="script.js"></script>
     <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <meta name="description" content="Violet Patterson - Professional Model and Dancer">
+    <title>Violet Patterson - Model & Dancer</title>
     <link rel="stylesheet" href="styles.css"> <!-- Assuming external CSS file -->
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="logo-container">
-            <h1>Violet Patterson</h1>
-            <p>Model & Dancer - Halifax, Nova Scotia</p>
+    <!-- Header Section -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#home">Violet Patterson</a>
         </div>
-        <nav class="navbar">
-            <ul classs="menu">
-                <a href="home.html">Home</a>
-                <a href="modeling.html">Work Experience - Modeling</a>
-                <a href="dancing.html">Work Experience - Dance</a>
-                <a href="rates.html">Rates</a>
-                <a href="gallery.html">Photo Gallery</a>
-                <a href="resume.html">Résumé</a>
-                <a href="contact.html">Contact</a>
-            </ul>
-        </nav>
-    </header>
-
-</body>
-
-    <section id="dance">
-        <div class="profile-picture">
-            <img src="images/ballet.png" alt="Violet Patterson in a ballet outfit" class="profile-img">
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
-        <h2>Dance Experience</h2>
-        <ul>
-            <li>
-                <strong>Nova Scotia Ballet Company - Performer</strong><br>
-                <i>"The Nutcracker" (2020 - 2024)</i>
-                <p>Featured in the holiday classic as part of the Snowflake and Flower Corps, performing intricate, synchronized routines.</p>
-                <p>Received praise for stage presence and technical skill in both group and individual sequences.</p>
-            </li>
-            <li>
-                <strong>Freelance Performances</strong><br>
-                <i>Local Arts Festivals, Private Events (Ongoing)</i>
-                <p>Delivered captivating solo and group performances in ballet and jazz for various local arts festivals and special events.</p>
-                <p>Adapted choreography to suit diverse audiences, showcasing versatility and improvisational skills.</p>
-            <li>
-                <strong>Maritime Ballet Academy - Guest Performer</strong><br>
-                <i>Spring Showcase - "The Four Seasons" (2020)</i>
-                <p>Portrayed the spirit of "Autumn" in a contemporary ballet piece inspired by Vivaldi's "The Four Seasons".</p>
-                <p>Balanced technical  expertise with fluidity to bring the choreographer’s vision to life.</p>
-                <p>Engaged audiences with compelling storytelling through dance.</p>
-            </li>
-            <li>
-                <strong>Nova Scotia Dance Collective - Soloist</strong><br>
-                <i>Dance Gala: "Reflections in Motion" (2019)</i>
-                <p>Delivered a solo performance blending classical ballet and modern jazz influences.</p>
-                <p>Recognized for dynamic expression and strong stage presence in a highly anticipated annual event.</p>
-            </li>
+        <ul class="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="modeling.html">Modeling</a></li>
+            <li><a href="dancing.html">Dance</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="rates.html">Rates</a></li>
+            <li><a href="resume.html">Résumé</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-    </section>
+    </nav>
 
-    <footer>
+    <!-- Work Experience Section -->
+    <section id="work">
+        <section class="work-experience">
+            <div class="profile-picture">
+                <img src="images/ballet2.png" alt="Violet doing a ballet pose" class="profile-img">
+            </div>
+            <h2>Work Experience - Dance</h2>
+            <div class="job">
+                <h3 class="job-title">Performer</h3>
+                <p class="company">Nova Scotia Ballet Company - "The Nutcracker"<span class="dates">2020 - 2024</span></p>
+                <ul class="job-description">
+                    <li>Featured in the holiday classic as part of the Snowflake and Flower Corps, performing intricate, synvrhonized routines.</li>
+                    <li>Received praise for stage presence and technical skills in both group and individual sequences.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3 class="job-title">Freelance</h3>
+                <p class="company">Local Arts Festivals, Private Events <span class="dates">Ongoing</span></p>
+                <ul class="job-description">
+                    <li>Delivered captivating solo and group performances in ballet and jazz for various local arts festivals and special events.</li>
+                    <li>Adapted choreography to suit diverse audiences, showcasing versatility and improvisational skills.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3 class="job-title">Guest Performer</h3>
+                <p class="company">Maritime Ballet Academy - "The Four Seasons" <span class="dates">Ongoing</span></p>
+                <ul class="job-description">
+                    <li>Portrayed the spirit of “Autumn” in a contemporary ballet piece inspired by Vivaldi’s “The Four Seasons”</li>
+                    <li>Balanced technical expertise with fluidity to bring the choreographer's vision to life.</li>
+                    <li>Engaged audiences with compelling storytelling through dance.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3 class="job-title">Soloist</h3>
+                <p class="company"> Nova Scotia Dance Collective Dance Gala - "Reflections in Motion"
+                <span class="dates">2019</span></p>
+                <ul class="job-description">
+                    <li>Delivered a solo performance blending classical ballet and modern jazz influence.</li>
+                    <li>Recognized for dynamic expression and strong stage presence in a highly anticipated annual event. </li>
+                </ul>
+            </div>
+        </section>
+    </section>
+    <script src="script.js"></script>
+    <!-- Footer -->
+    <footer class="footer-tab">
         <p>&copy; 2024 Violet Patterson. All Rights Reserved.</p>
     </footer>
-
 </body>
+
+</html>

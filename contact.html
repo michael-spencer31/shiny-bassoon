@@ -1,92 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/logo.png">
-    <script src="script.js"></script>
     <meta name="description" content="Violet Patterson - Professional Model and Dancer">
     <title>Violet Patterson - Model & Dancer</title>
     <link rel="stylesheet" href="styles.css"> <!-- Assuming external CSS file -->
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="logo-container">
-            <h1>Violet Patterson</h1>
-            <p>Model & Dancer - Halifax, Nova Scotia</p>
+    <!-- Header Section -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#home">Violet Patterson</a>
         </div>
-        <nav class="navbar">
-            <ul classs="menu">
-                <a href="home.html">Home</a>
-                <a href="modeling.html">Work Experience - Modeling</a>
-                <a href="dancing.html">Work Experience - Dance</a>
-                <a href="rates.html">Rates</a>
-                <a href="gallery.html">Photo Gallery</a>
-                <a href="resume.html">Résumé</a>
-                <a href="contact.html">Contact</a>
-            </ul>
-        </nav>
-    </header>
-
-     <section id="dynamic-form">
-    <h2>Contact Me</h2>
-    <p>Please fill out the form below and I will get back to you promptly.</p>
-    <form id="conditionalForm">
-        <!-- Question 1 -->
-        <div id="question1">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
+        <ul class="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="modeling.html">Modeling</a></li>
+            <li><a href="dancing.html">Dance</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="rates.html">Rates</a></li>
+            <li><a href="resume.html">Résumé</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-        <!-- Question 2 -->
-        <div id="question2">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        </div>
+    <!-- Work Experience Section -->
+    <section id="work">
+        <section class="contact-section">
+        <h2>Contact Me</h2>
+        <p>If you have any questions or would like to book a session, please fill out the form below:</p>
 
-        <!-- Question 3 -->
-        <div id="question3">
-            <label for="event-type">What type of event?</label>
-            <select id="event-type" name="event-type" required>
-                <option value="" disabled selected>Select an option</option>
-                <option value="modeling">Modeling</option>
-                <option value="dance">Dance</option>
-            </select>
-        </div>
+        <form class="contact-form">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+            </div>
 
-        <!-- Question 4 (Dynamic based on Question 3) -->
-        <div id="modeling-question" style="display: none;">
-            <label for="modeling-details">What type of modeling?</label>
-            <select id="modeling-details" name="modeling-details" required>
-                <option value="" disabled selected>Select an option</option>
-                <option value="runway">Runway</option>
-                <option value="editorial">Editorial</option>
-                <option value="lingerie">Lingerie</option>
-                <option value="bridal">Bridal</option>
-            </select>
-        </div>
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
 
-        <div id="dance-question" style="display: none;">
-            <label for="dance-details">What type of dance?</label>
-            <select id="dance-details" name="dance-details" required>
-                <option value="" disabled selected>Select an option</option>
-                <option value="ballet">Ballet</option>
-                <option value="jazz">Jazz</option>
-                <option value="contemporary">Contemporary</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
+            <!-- Phone -->
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+            </div>
 
-        <!-- Submit Button -->
-        <button type="submit" style="display: none;" id="submitButton">Submit</button>
-    </form>
-</section>
+            <!-- Subject -->
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject of Your Message">
+            </div>
 
-<footer>
+            <!-- Message -->
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Send Message</button>
+            </div>
+        </form>
+    </section>
+    <script src="script.js"></script>
+    <!-- Footer -->
+    <footer class="footer-tab">
         <p>&copy; 2024 Violet Patterson. All Rights Reserved.</p>
     </footer>
-
-
-
 </body>
+
+</html>

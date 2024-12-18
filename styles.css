@@ -487,3 +487,100 @@ input[type="number"] {
     line-height: 1.6;
 }
 
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Contact Section */
+.contact-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-section h2 {
+    color: blueviolet;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Inputs and Textareas */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    resize: none; /* Disable resizing on textareas */
+    transition: border-color 0.3s ease-in-out;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: blueviolet;
+    outline: none;
+}
+
+/* Button */
+.submit-btn {
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: darkviolet;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 15px;
+    }
+
+    .submit-btn {
+        width: auto;
+    }
+}
