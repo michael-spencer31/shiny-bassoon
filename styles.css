@@ -37,10 +37,14 @@ body, ul, li, a {
   color: #f3a712;
 }
 
+.nav-list.active {
+    display: fex;
+}
+
 .nav-list {
   position: absolute;
-  top: 60px; /* Adjusted to align with navbar height */
-  right: 20px;
+  top: 55px; /* Adjusted to align with navbar height */
+  right: 40px;
   background: blueviolet;
   border-radius: 5px;
   overflow: hidden;
@@ -61,7 +65,7 @@ body, ul, li, a {
 }
 
 .nav-list a:hover {
-  color: #f3a712;
+  color: black;
 }
 
 
@@ -93,13 +97,13 @@ body, ul, li, a {
     max-height: none;
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    border: none;
   }
 }
 
 /* Show menu when active */
 .nav-list.active {
-  max-height: 300px; /* Adjust this based on the number of links */
+  max-height: 400px; /* Adjust this based on the number of links */
 }
 
 
