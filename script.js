@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (modelingType === "hosiery") {
             cost += 100;
         }
-        
+
         estimatedCostLabel.textContent = `Estimated Cost: $${cost} CAD`;
     }
 
@@ -76,4 +76,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initial setup
     updateConditionalFields();
     updateEstimatedCost();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+        const question = item.querySelector(".faq-question");
+
+        question.addEventListener("click", () => {
+            // Toggle the active class
+            item.classList.toggle("active");
+
+            // Close all other open items
+            faqItems.forEach((otherItem) => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove("active");
+                }
+            });
+        });
+    });
 });

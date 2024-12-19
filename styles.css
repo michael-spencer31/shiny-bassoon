@@ -43,8 +43,8 @@ body, ul, li, a {
 
 .nav-list {
   position: absolute;
-  top: 55px; /* Adjusted to align with navbar height */
-  right: 40px;
+  top: 65px; /* Adjusted to align with navbar height */
+  right: 2px;
   background: blueviolet;
   border-radius: 5px;
   overflow: hidden;
@@ -587,4 +587,93 @@ body {
     .submit-btn {
         width: auto;
     }
+}
+
+/* FAQ Section Styling */
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4a4a4a;
+}
+
+/* FAQ Section */
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4a4a4a;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* FAQ Items */
+.faq {
+    margin-top: 20px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border-left: 4px solid #7b68ee; /* Blueviolet */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.faq-item h3 {
+    font-size: 1.5rem;
+    color: #7b68ee; /* Blueviolet */
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 1rem;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .faq-section h2 {
+        font-size: 2rem;
+    }
+
+    .faq-item h3 {
+        font-size: 1.25rem;
+    }
+
+    .faq-item p {
+        font-size: 0.95rem;
+    }
+}
+
+.faq-item h3 .bullet {
+    display: inline-block;
+    font-size: 2rem;
+    color: #7b68ee; /* Blueviolet */
+    font-weight: bold;
 }
