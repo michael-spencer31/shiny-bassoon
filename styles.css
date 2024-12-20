@@ -604,76 +604,87 @@ body {
     color: #4a4a4a;
 }
 
-/* FAQ Section */
-.faq-section {
+/* Accordion Container */
+.accordion-container {
     max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 2rem auto;
     font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.faq-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #4a4a4a;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 10px;
+/* Accordion Item */
+.accordion-item {
+    border-top: 1px solid #ddd;
 }
 
-/* FAQ Items */
-.faq {
-    margin-top: 20px;
+.accordion-item:first-of-type {
+    border-top: none;
 }
 
-.faq-item {
-    margin-bottom: 20px;
-    padding: 15px 20px;
-    background-color: #ffffff;
-    border-left: 4px solid #7b68ee; /* Blueviolet */
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.faq-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.faq-item h3 {
-    font-size: 1.5rem;
-    color: #7b68ee; /* Blueviolet */
-    margin-bottom: 10px;
-}
-
-.faq-item p {
-    font-size: 1rem;
-    color: #333333;
-    line-height: 1.6;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    .faq-section h2 {
-        font-size: 2rem;
-    }
-
-    .faq-item h3 {
-        font-size: 1.25rem;
-    }
-
-    .faq-item p {
-        font-size: 0.95rem;
-    }
-}
-
-.faq-item h3 .bullet {
-    display: inline-block;
-    font-size: 2rem;
-    color: #7b68ee; /* Blueviolet */
+/* Accordion Header */
+.accordion-header {
+    background-color: #f4f4f9;
+    color: #444;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #e9e9ee;
+}
+
+.accordion-header.active {
+    background-color: #ddd;
+}
+
+/* Accordion Icon */
+.accordion-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* Left Bar */
+.accordion-bar {
+    background-color: blueviolet;
+    width: 8px;
+    height: 100%;
+}
+
+.accordion-header.active .accordion-icon {
+    transform: rotate(90deg); /* Rotates icon on active state */
+}
+
+/* Accordion Content */
+.accordion-content {
+    background-color: #fff;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    color: #555;
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.accordion-content p {
+    margin: 0.5rem 0;
+}
+
+/* Animation for Content */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

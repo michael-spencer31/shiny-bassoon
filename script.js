@@ -78,22 +78,17 @@ document.addEventListener("DOMContentLoaded", function () {
     updateEstimatedCost();
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const faqItems = document.querySelectorAll(".faq-item");
-
-    faqItems.forEach((item) => {
-        const question = item.querySelector(".faq-question");
-
-        question.addEventListener("click", () => {
-            // Toggle the active class
-            item.classList.toggle("active");
-
-            // Close all other open items
-            faqItems.forEach((otherItem) => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove("active");
-                }
-            });
-        });
+document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+        // Toggle active class on the header
+        header.classList.toggle('active');
+        
+        // Toggle the associated content
+        const content = header.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
     });
 });
