@@ -1,15 +1,17 @@
 /* Reset some default styles */
 body, ul, li, a {
     font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
-/* Common height for header and footer */
+/* Root Variables */
 :root {
-  --header-footer-height: 60px; /* Set a consistent height */
+    --header-footer-height: 60px; /* Set a consistent height */
+    --primary-color: blueviolet;
+    --text-color: #444;
 }
 
 /* Navbar styles */
@@ -603,6 +605,42 @@ body {
     margin-bottom: 20px;
     color: #4a4a4a;
 }
+
+/* FAQ Bullet Points */
+.faq-bullet-points {
+    margin-top: 1rem;
+    padding-left: 1.5rem; /* Adds some padding to align the list neatly */
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    list-style-type: none;
+}
+
+.faq-bullet-points li {
+    list-style-type: disc; /* Default bullet point style */
+    margin-bottom: 0.5rem; /* Adds spacing between list items */
+    padding-left: 0.5rem; /* Indents text slightly for clarity */
+    position: relative;
+}
+
+.faq-bullet-points li:before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: blueviolet; /* Custom bullet color */
+    border-radius: 50%; /* Makes the bullet circular */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.faq-bullet-points li span {
+    margin-left: 1.5rem; /* Adjust spacing between bullet and text */
+    display: inline-block;
+}
+
 
 /* Accordion Container */
 .accordion-container {
