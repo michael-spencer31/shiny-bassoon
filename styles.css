@@ -726,3 +726,13 @@ body {
         transform: translateY(0);
     }
 }
+
+/* Style for the label of required fields */
+label.required::after {
+    content: '*'; /* Adds the asterisk */
+    color: orange; /* Sets the color of the asterisk */
+    margin-left: 0.3rem; /* Adds spacing between the label text and the asterisk */
+    font-weight: bold; /* Makes the asterisk bold */
+    font-size: 1.2em; /* Slightly larger font size for emphasis */
+    vertical-align: middle; /* Aligns the asterisk with the label text */
+}
