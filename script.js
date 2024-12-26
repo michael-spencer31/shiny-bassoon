@@ -6,6 +6,8 @@ mobileMenu.addEventListener('click', () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    console.log("Updating conditional fields...");
     // Get references to elements
     const eventTypeRadios = document.querySelectorAll('input[name="event-type"]');
     const modelingSection = document.querySelector('.modeling');
@@ -18,18 +20,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Show/Hide sections based on selection
         if (selectedEventType === "modeling") {
-            modelingSection.classList.add("active");
-            danceSection.classList.remove("active");
+            modelingSection.style.display = "block"; // Show modeling section
+            danceSection.style.display = "none"; // Hide dance section
         } else if (selectedEventType === "dance") {
-            danceSection.classList.add("active");
-            modelingSection.classList.remove("active");
+            modelingSection.style.display = "none"; // Hide modeling section
+            danceSection.style.display = "block"; // Show dance section
         } else {
             // Hide both sections if nothing is selected
-            modelingSection.classList.remove("active");
-            danceSection.classList.remove("active");
+            modelingSection.style.display = "none";
+            danceSection.style.display = "none";
         }
     }
+    // Add event listeners to the radio buttons
+    eventTypeRadios.forEach((radio) => {
+        radio.addEventListener("change", updateConditionalFields);
+    });
 
+    // Initial setup
+    updateConditionalFields();
+    updateEstimatedCost();
+    
     function updateEstimatedCost() {
 
         let cost = 100;
@@ -72,10 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('input, select').forEach((element) => {
         element.addEventListener("input", updateEstimatedCost);
     });
-
-    // Initial setup
-    updateConditionalFields();
-    updateEstimatedCost();
 });
 
 document.querySelectorAll('.accordion-header').forEach(header => {

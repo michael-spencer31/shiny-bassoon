@@ -41,17 +41,38 @@
                         </div>
                     </div>
 
-                    <!-- Question 2 -->
+                    <!-- Question 2
                     <div class="form-group">
                         <label>What type of event?</label>
+                        <div class="modeling">Modeling Section Content</div>
+                        <div class="dance">Dance Section Content</div>
+
+                        
                         <div class="radio-group">
                             <label><input type="radio" name="event-type" value="modeling" required> Modeling</label>
                             <label><input type="radio" name="event-type" value="dance"> Dance</label>
                         </div>
+                        
                     </div>
+                    --->
 
-                    <!-- Question 2a -->
-                    <div class="form-group conditional modeling">
+                    <!-- Event Type Radio Buttons -->
+                    <div>
+                        <div class="form-group">
+                            <label>What type of event?</label>
+                        
+                            <label>
+                                <input type="radio" name="event-type" value="modeling"> Modeling
+                            </label>
+                            <label>
+                                <input type="radio" name="event-type" value="dance"> Dance
+                            </label>
+                        </div>
+                    </div>
+                    
+
+                    <div class="modeling" style="display: none;"> <!-- This section is hidden by default -->
+                        <!-- Question 2a -->
                         <label>Do you need lingerie, intimates, or hosiery modeled?</label>
                         <select name="modeling-type" id="modeling-type">
                             <option value="">-- Select an option --</option>
@@ -63,17 +84,18 @@
                         </select>
                     </div>
 
-                    <!-- Question 2b -->
-                    <div class="form-group conditional dance">
-                        <label>What type of dance?</label>
-                        <select name="dance-type" id="dance-type">
-                            <option value="">-- Select an option --</option>
-                            <option value="ballet">Ballet</option>
-                            <option value="jazz">Jazz</option>
-                            <option value="other">Other</option>
-                        </select>
+                    <div class="dance" style="display: none;">
+                        <!-- Question 2b -->
+                        <div class="form-group conditional dance">
+                            <label>What type of dance?</label>
+                            <select name="dance-type" id="dance-type">
+                                <option value="">-- Select an option --</option>
+                                <option value="ballet">Ballet</option>
+                                <option value="jazz">Jazz</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
                     </div>
-
                     <!-- Question 3 -->
                     <div class="form-group">
                         <label>How long is your event, in hours?</label>
@@ -101,6 +123,6 @@
         <footer class="footer-tab">
             <p>&copy; <script>document.write(new Date().getFullYear())</script> Violet Patterson. All Rights Reserved.</p>
         </footer>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     </body>
 </html>

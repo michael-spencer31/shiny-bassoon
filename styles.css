@@ -313,6 +313,10 @@ input[type="number"] {
     display: block;
 }
 
+.modeling, .dance {
+    display: none;
+}
+
 /* Display Conditional Fields Based on Selection */
 .modeling.active,
 .dance.active {
