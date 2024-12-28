@@ -300,6 +300,18 @@ input[type="number"] {
     transition: background-color 0.3s ease;
 }
 
+/* Styling for the duration input field */
+input[name="event-duration"] {
+    width: 200px; /* Set a fixed width */
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+    padding: 8px; /* Add padding for better usability */
+    border: 1px solid #ccc; /* Subtle border for visibility */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Consistent font size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+
 .submit-button:hover {
     background-color: #45a049;
 }

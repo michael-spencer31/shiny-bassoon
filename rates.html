@@ -41,21 +41,6 @@
                         </div>
                     </div>
 
-                    <!-- Question 2
-                    <div class="form-group">
-                        <label>What type of event?</label>
-                        <div class="modeling">Modeling Section Content</div>
-                        <div class="dance">Dance Section Content</div>
-
-                        
-                        <div class="radio-group">
-                            <label><input type="radio" name="event-type" value="modeling" required> Modeling</label>
-                            <label><input type="radio" name="event-type" value="dance"> Dance</label>
-                        </div>
-                        
-                    </div>
-                    --->
-
                     <!-- Event Type Radio Buttons -->
                     <div>
                         <div class="form-group">
@@ -73,18 +58,20 @@
 
                     <div class="modeling" style="display: none;"> <!-- This section is hidden by default -->
                         <!-- Question 2a -->
-                        <label>Do you need lingerie, intimates, or hosiery modeled?</label>
-                        <select name="modeling-type" id="modeling-type">
-                            <option value="">-- Select an option --</option>
-                            <option value="lingerie">Lingerie</option>
-                            <option value="intimates">Intimates</option>
-                            <option value="hosiery">Hosiery</option>
-                            <option value="multiple">Multiple</option>
-                            <option value="none">None of the Above</option>
-                        </select>
+                        <div class="form-group conditional modeling">
+                            <label>Do you need lingerie, intimates, or hosiery modeled?</label>
+                            <select name="modeling-type" id="modeling-type">
+                                <option value="">-- Select an option --</option>
+                                <option value="lingerie">Lingerie</option>
+                                <option value="intimates">Intimates</option>
+                                <option value="hosiery">Hosiery</option>
+                                <option value="multiple">Multiple</option>
+                                <option value="none">None of the Above</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="dance" style="display: none;">
+                    <div class="dance" style=" display: none;">
                         <!-- Question 2b -->
                         <div class="form-group conditional dance">
                             <label>What type of dance?</label>
@@ -92,6 +79,7 @@
                                 <option value="">-- Select an option --</option>
                                 <option value="ballet">Ballet</option>
                                 <option value="jazz">Jazz</option>
+                                <option value="ballroom">Ballroom</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
