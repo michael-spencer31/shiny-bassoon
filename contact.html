@@ -39,7 +39,7 @@
         <h2>Contact Me</h2>
         <p>If you have any questions or would like to book a session, please fill out the form below. <br> All fields marked with <label for="req" class="required"> </label> are required.</p>
 
-        <form class="contact-form" action="https://formspree.io/f/mjkvqnyb" method="POST">
+        <form class="contact-form" id="contact-form">
             <!-- Name -->
             <div class="form-group">
                 <label for="name" class="required">Full Name</label>
@@ -64,7 +64,7 @@
                 <input type="text" id="subject" name="subject" placeholder="Subject of Your Message" required>
             </div>
 
-            <!-- Subject -->
+            <!-- Event Date -->
             <div class="form-group">
                 <label for="subject">Event Date</label>
                 <input type="date" id="start" name="event-start" value="2025-01-01" min="2025-01-01">
@@ -78,11 +78,12 @@
 
             <!-- Submit Button -->
             <div class="form-group">
-                <button type="submit" class="submit-btn" >Send Message</button>
+                <button type="submit" class="submit-btn">Send Message</button>
             </div>
         </form>
-
-        <script id="setmore_script" type="text/javascript" src="https://storage.googleapis.com/fullintegration-live/webComponentAppListing/Container/setmoreIframeLive.js"></script><a style="float:none; " id="Setmore_button_iframe"  href="https://booking.setmore.com/scheduleappointment/bd65965c-a4ad-44a6-aabe-e0a5275cb6cb"><img border="none" src="https://assets.setmore.com/setmore/images/2.0/Settings/book-now-black.svg" alt="Book an appointment with Violet Patterson using Setmore"/></a>
+        <div id="submission-feedback" style="display: none; text-align: center; margin-top: 20px;">
+            <p style="color: green; font-weight: bold;">Thank you! Your message has been sent successfully.</p>
+        </div>   
     </section>
     <script src="script.js"></script>
     <!-- Footer -->

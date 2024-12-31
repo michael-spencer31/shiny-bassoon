@@ -167,3 +167,19 @@ document.querySelectorAll('.accordion-header').forEach(header => {
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contact-form");
+    const feedbackDiv = document.getElementById("submission-feedback");
+
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent actual form submission
+
+        // Simulate form processing
+        feedbackDiv.style.display = "block"; // Show feedback message
+
+        // Clear the form fields
+        contactForm.reset();
+    });
+});
